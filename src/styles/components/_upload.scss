@@ -1,0 +1,244 @@
+.upload_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    margin: 0 auto;
+    gap: 4rem;
+  .upload_container_div{
+    display: flex;
+    padding: 50px;
+    max-width: 800px;
+    min-height: 450px;
+    // width: 100%;
+    justify-content:center ;
+    align-items: center;
+    border-radius: 5px;
+    font-family: 'Verdana', sans-serif;
+    margin-bottom: 110px;
+
+    .upload_container_boxPrimary{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       border-radius: 10px;
+       box-shadow: 0 0 1rem #00000025;
+       padding: 100px;
+
+       button{
+          position: relative;
+          background: $color-green;
+          border: none;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          color: $color-white;
+          font-size: 17px;
+          padding: 15px 20px;
+          border-radius:5px;
+          font-weight: bolder;
+          margin-top: 25px;
+          font-family: 'Verdana', sans-serif;
+          margin-bottom: 10px;
+        }
+
+      button:hover{
+          transition: .5s;
+          color: $color-white;
+          background: #19746a;
+        }
+      
+      button i{
+        margin-right: 7px;
+      }
+  
+    span{
+      font-size: 17px;
+    }
+
+      input{
+          position: absolute;
+          opacity: 0;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          cursor: pointer;
+      }
+
+    }
+    
+    .upload_container_boxSecundary{
+       display: flex;
+       justify-content: space-between;
+       width: 95%;
+       .upload_container_boxSecundary_img {
+        max-height: 600px;
+        object-fit: cover;
+        width: 50%;
+        border-radius: 5px;
+       }
+
+       .upload_container_boxSecundary_form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        gap: 10px;
+
+       }
+    
+       form input{
+         padding:10px;
+         font-size: 16px;
+         border: 1px solid #2222;
+         width: 100%;
+         font-family: 'Verdana', sans-serif;
+         outline: none;
+       }
+
+       .caja {
+        border:1px solid #2222;
+        width: 100%;
+        position:relative;
+     }
+     select {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background: $color-white;
+        border: none;
+        font-size: 16px;
+        padding: 10px;
+        outline: none;
+        font-family: 'Verdana', sans-serif;
+        color: #666;
+     }
+    
+     .caja i{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background: #fff;
+        top: 0;
+        right: 0;
+     }
+
+       form label{
+        font-size: 16px;
+       }
+
+       form label span {
+        color: #777;
+        margin-left: 5px;
+       }
+
+       
+
+       form button i {
+        margin-right: 10px;
+      }
+    
+    }   
+   
+    .upload_container_setionSumit{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 100%;
+        height: 100px;
+        z-index: 10;
+        background: #E8F9FD;
+         button{
+          font-size: 16px;
+          padding: 15px 40px;
+          margin-right: 50px;
+          width: max-content;
+          border: none;
+          font-family: 'Verdana', sans-serif;
+          color: $color-white;
+          background: $color-green;
+          border-radius: 2.5px;
+          font-weight: 500;
+          cursor: pointer;
+         }
+
+         button:hover {
+          transition: .5s;
+          color: $color-white;
+          background: #19746a;
+         }
+    }
+   
+}
+
+
+.upload_container_btnDelte{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  font-size: 2rem;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #999;
+  background: #1111;
+  cursor: pointer;
+}
+
+.upload_container_btnDelte:hover{
+  transition: .5;
+  color: #777;
+}
+
+}
+
+
+
+
+
+
+@media screen and (max-width:680px) {
+        .upload_container{
+         padding: 0;
+        .upload_container_div{
+        padding: 40px 10px;
+        .upload_container_boxPrimary{
+          button{
+            padding: 10px;
+            border-radius: 5px;
+            i{
+              display: none;
+            }
+          }
+        }
+       .upload_container_boxSecundary{
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        width: 100%;
+        .upload_container_boxSecundary_img{
+          width: 100%;
+          height: auto;
+        }
+        .upload_container_boxSecundary_form{
+          width: 100%;
+        }
+      }
+      
+       }
+  
+      }
+}
+
+

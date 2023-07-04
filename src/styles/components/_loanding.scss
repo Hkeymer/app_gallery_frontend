@@ -1,0 +1,9 @@
+.loanding_spinn {
+    animation: spi 1s linear infinite;
+  }
+  
+  @keyframes spi {
+    to {
+        transform: rotate(360deg);
+    }
+  }

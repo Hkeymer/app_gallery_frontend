@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.noDisplay{
+   display: none;
+}
+
+//  S E C P T I O N ******* V A R ;
+
+$color-black:#111;
+$color-white:#fff;
+$color-green: #22A699;
+
+//  S E C P T I O N ******* R O O T ;
+
+body {
+    font-family: system-ui,  Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    background: $color-white;
+    color: $color-black;
+    padding: 40px;
+    padding-top: 100px;
+
+    a{
+        text-decoration: none;
+        color: $color-black;
+    }
+
+    button{
+        color: $color-black ;
+    }
+  
+  }
+
+
+//  S E C P T I O N ******* I M P O R T ;
+
+
+@import './components/navbar';
+@import './components/upload';
+@import './components/searchForm';
+@import './components/contencards';
+@import './components/cards';
+@import './components/categories';
+@import './components/modal';
+@import './components/loanding';

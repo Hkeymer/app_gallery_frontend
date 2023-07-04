@@ -1,0 +1,64 @@
+.cards_container {
+    position: relative;
+
+    .cards_container_img{
+        max-width: 100%;
+        display: block;
+        margin-bottom: 0.5rem;
+        border-radius: 5px;
+        background-color: #1111;
+        cursor: pointer;
+    }
+
+    .cards_container_img:hover{
+      transition: .3s;
+      opacity: 0.9;
+    }
+
+    .cards_container_btn_fovo {
+      position: absolute;
+      transition: all .5s;
+      opacity: 0;
+      top: 7px;
+      right: 7px;
+      padding: 5.5px;
+      font-size: 2rem ;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      cursor: pointer;
+  }
+  .cards_container_btn_fovo:hover{
+    background: $color-green;
+    color: #fff;
+}
+
+  .cards_container_modal_img{
+      max-width: 400px;
+      max-height: 80vh;
+      object-fit: cover;
+  }
+
+
+  &:hover {
+       .cards_container_btn_fovo {
+        opacity: 1;
+       }
+  }
+
+}
+
+@media screen and (max-width: 700px){
+  .cards_container{
+    .cards_container_modal_img{
+      height: auto;
+      width:100%;
+    }
+  }
+ 
+
+}
+
