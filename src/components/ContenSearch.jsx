@@ -14,6 +14,7 @@ const ContenSearch = () => {
       <ContenCards
        typeFetch={`/search/images/${search}`} 
        textSearch={search}
+       isNoDisplay={true}
        />
    </div>
   )

@@ -8,7 +8,7 @@ import { pathRoute } from '../App'
 const Cards = lazy(()=>import('./Cards'))
 
 
-const ContenCards = ({typeFetch,text_description,textSearch}) => {
+const ContenCards = ({typeFetch,text_description,textSearch,isNoDisplay}) => {
 
     const [data, setData] = useState([])
     const [noData, setNoData] = useState(false)
@@ -56,7 +56,7 @@ const ContenCards = ({typeFetch,text_description,textSearch}) => {
 
   return (
     <div>
-      <Categories text={data.length>0&&text_description}/>
+      <Categories isNoDisplay={isNoDisplay} text={data.length>0&&text_description}/>
       {!noData?<div className='contencards_container' >{
          data.map(item=>
          <Suspense  key={item.id} 
