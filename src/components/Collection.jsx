@@ -1,6 +1,5 @@
 import React from 'react'
 import ContenCards from './ContenCards'
-import Categories from './Categories'
 
 const Collection = () => {
   return (

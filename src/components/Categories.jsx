@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick"
 import Loading from './Loading'
+import { pathRoute } from '../App'
 
 
 
@@ -106,7 +107,7 @@ const Categories = ({text,isNoDisplay}) => {
        className={({ isActive}) => isActive ? "isActive" : "link"}
        key={item.categotyID}
        onClick={()=>dispatch(setIdCategoryAction(item.categotyID))} 
-       to={`/categoty/${item.categotyNAME}`}>
+       to={`${pathRoute}/categoty/${item.categotyNAME}`}>
        {item.categotyNAME}
       </NavLink>
       )}

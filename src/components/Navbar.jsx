@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import SearchForm from './SearchForm'
 import { AiOutlineMenu , AiOutlineClose} from 'react-icons/ai'
 import { SiPhotopea } from 'react-icons/si'
+import { pathRoute } from '../App'
 
 
 const Navbar = () => {
@@ -27,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav className='navbar_container'>
-      <NavLink to={'/'}
+      <NavLink to={pathRoute}
       className='navbar_container_logo' 
       ><SiPhotopea fontSize={45}/> <span>photo</span></NavLink>
       <SearchForm/>
@@ -41,16 +42,16 @@ const Navbar = () => {
       <div className={isOpen?'navbar_container_menu_div':'navbar_translate'}>
 
         <div className='navbar_container_menu_liner'></div>
-        <NavLink  to={'/'}>Home</NavLink>
-        <NavLink  to={'/collection'}>Collection</NavLink>
-        <NavLink  to={'/upload'}>Upload</NavLink>
+        <NavLink  to={pathRoute}>Home</NavLink>
+        <NavLink  to={pathRoute+'/collection'}>Collection</NavLink>
         <div className='navbar_container_menu_liner'></div>
+        <NavLink to={pathRoute+'/upload'}>Upload</NavLink>
 
        </div>
        <div className='navbar_container_div'>
-        <NavLink className='navbar_container_div_link' to={'/'}>Home</NavLink>
-        <NavLink className='navbar_container_div_link' to={'/collection'}>Collection</NavLink>
-        <NavLink className='navbar_container_div_Upload' to={'/upload'} >Upload</NavLink>
+        <NavLink className='navbar_container_div_link' to={pathRoute}>Home</NavLink>
+        <NavLink className='navbar_container_div_link' to={pathRoute+'/collection'}>Collection</NavLink>
+        <NavLink className='navbar_container_div_Upload' to={pathRoute+'/upload'} >Upload</NavLink>
        </div>
     </nav>
   )

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { updateComponentAction } from '../redux/actions/actions'
 import Categories from './Categories'
 import { useNavigate } from 'react-router-dom'
+import { pathRoute } from '../App'
 const Cards = lazy(()=>import('./Cards'))
 
 
@@ -58,11 +59,11 @@ const ContenCards = ({typeFetch,text_description,textSearch}) => {
       <Categories text={data.length>0&&text_description}/>
       {!noData?<div className='contencards_container' >{
          data.map(item=>
-         <Suspense fallback={<div className='contencards_container_lazy_loanding' > 
+         <Suspense  key={item.id} 
+         fallback={<div className='contencards_container_lazy_loanding' > 
          <span>Loanding...</span>
          </div>}>
            <Cards
-          key={item.id}
           path={'https://appgalley.onrender.com/'+item?.path}
           collection={item.collection}
           id={item.id}
@@ -74,7 +75,7 @@ const ContenCards = ({typeFetch,text_description,textSearch}) => {
      :<div className='contencards_noData'>
           <h1>Could not find results for "<span>{textSearch}</span>" .</h1>
           <h1>Try to refine your search.</h1>
-          <button onClick={()=>history('/')}>Go to homepage</button>
+          <button onClick={()=>history(pathRoute)}>Go to homepage</button>
          </div>
      }
     </div>

@@ -10,17 +10,19 @@ import Collection from "./components/Collection"
 import ContenSearch from "./components/ContenSearch"
 
 
+export const pathRoute = "/photo"
+
 function App() {
 
   return (
     <Provider store={store}>
     <Navbar/>
      <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/upload" element={<Upload/>}/>
-      <Route path="/categoty/:name" element={<ContenCategories/>}/>
-      <Route path="/collection" element={<Collection/>}/>
-      <Route path="/search/images" element={<ContenSearch/>}/>
+      <Route path={pathRoute} element={<Home/>}/>
+      <Route path={pathRoute+"/upload"} element={<Upload/>}/>
+      <Route path={pathRoute+"/categoty/:name"} element={<ContenCategories/>}/>
+      <Route path={pathRoute+"/collection"} element={<Collection/>}/>
+      <Route path={pathRoute+"/search/images"} element={<ContenSearch/>}/>
     </Routes>
     </Provider>
   )

@@ -2,6 +2,7 @@ import ContenCards from './ContenCards'
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { pathRoute } from '../App';
 
 
 
@@ -14,7 +15,7 @@ const ContenCategories = () => {
 
   useEffect(() => {
 
-    if(id_category===null) history('/')
+    if(id_category===null) history(pathRoute)
 
   }, [])
   

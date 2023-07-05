@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import getApi, { base_url } from '../functions/getApi';
-import { ImUpload3 } from 'react-icons/im'
 import { BsImages } from 'react-icons/bs'
-import { AiFillDelete, AiOutlineClose } from 'react-icons/ai'
+import { AiFillDelete } from 'react-icons/ai'
 import { BiChevronDown } from 'react-icons/bi'
+
 
 
 
@@ -57,12 +57,14 @@ const Upload = () => {
         })
          
         setDisplay(false)
+      
         
       // limpiando inputs;
         document.getElementById('file').value = '';
         document.getElementById('selectId').value = ''
         setFile(null);
         setTitle('');
+
   }
 
 
@@ -90,10 +92,6 @@ const Upload = () => {
     setDisplay(true)
   
   }
-    //  else{
-    //      setView('')   
-    //      document.getElementById('selectId').value = ''
-    //  } 
       
   return ()=>  {
     setView('')

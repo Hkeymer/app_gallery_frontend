@@ -2,8 +2,8 @@ import { useState, useEffect} from 'react'
 import { BiSearch } from 'react-icons/bi'
 import { AiOutlineClose } from 'react-icons/ai'
 import getApi, { base_url } from '../functions/getApi'
-import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { pathRoute } from '../App'
 
 
 
@@ -70,7 +70,7 @@ const SearchForm = () => {
             fetch(`${base_url}/serach/history/${text.toLocaleLowerCase()}`,{
                method:'POST'
             })
-            history(`/search/images?query=${text}`);
+            history(`${pathRoute}/search/images?query=${text}`);
             setIsdisplay(false)
          }
    }
@@ -88,7 +88,7 @@ const hadlesList = name =>{
               method:'POST'
            })
            }
-         history(`/search/images?query=${name}`)
+         history(`${pathRoute}/search/images?query=${name}`)
 }
 
 const historyDelete = id => {
@@ -155,8 +155,8 @@ const historyDelete = id => {
        {/* D I V ****  H I S T O R Y */}
        <span>Search history</span>
        <div className='searchForm_container_div_history'>
-       {historyData.map(item=><p to={`/search`}
-        onClick={()=>hadlesList(item.name_search.toLocaleLowerCase())}
+       {historyData.map(item=><p 
+          onClick={()=>hadlesList(item.name_search.toLocaleLowerCase())}
           key={item.id_search}>
          <BiSearch fontSize={16}/>
          {item.name_search} 
@@ -172,8 +172,8 @@ const historyDelete = id => {
   {/* D I V **** C A T E G O R I E S */}
   <span>Collection</span>
   <div className='searchForm_container_div_categories' >
-       {data.map(item=><p to={`/categoty/${item.categotyNAME}`}
-          onClick={()=>hadlesList(item.categotyNAME.toLocaleLowerCase())}
+       {data.map(item=><p 
+        onClick={()=>hadlesList(item.categotyNAME.toLocaleLowerCase())}
         key={item.categotyID}>
         {item.categotyNAME}
         </p>)}
