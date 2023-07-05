@@ -41,7 +41,7 @@ const Cards = ({id,path,collection , item}) => {
      <img className='cards_container_img'
      ref={ref_img_modal}
      src={path}
-     onClick={()=>console.log(id)}
+     onClick={()=>openModal()}
      />
      <button className='cards_container_btn_fovo'
       onClick={()=>update_collection()}
