@@ -8,7 +8,7 @@ import { pathRoute } from '../App'
 const Cards = lazy(()=>import('./Cards'))
 
 
-const ContenCards = ({typeFetch,text_description,textSearch,isNoDisplay}) => {
+const ContenCards = ({typeFetch,text_description,textSearch}) => {
 
     const [data, setData] = useState([])
     const [noData, setNoData] = useState(false)
@@ -56,8 +56,9 @@ const ContenCards = ({typeFetch,text_description,textSearch,isNoDisplay}) => {
 
   return (
     <div>
-      <Categories isNoDisplay={isNoDisplay} text={data.length>0&&text_description}/>
-      {!noData?<div className='contencards_container' >{
+      {!noData?<div>
+      <Categories text={data.length>0&&text_description}/>
+      <div className='contencards_container' >{
          data.map(item=>
          <Suspense  key={item.id} 
          fallback={<div className='contencards_container_lazy_loanding' > 
@@ -71,7 +72,7 @@ const ContenCards = ({typeFetch,text_description,textSearch,isNoDisplay}) => {
          /> 
          </Suspense>   
          )}</div>
-      
+      </div>
      :<div className='contencards_noData'>
           <h1>Could not find results for "<span>{textSearch}</span>" .</h1>
           <h1>Try to refine your search.</h1>
