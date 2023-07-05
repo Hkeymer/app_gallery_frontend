@@ -7,7 +7,7 @@ import Modal from './Modal';
 import { useEffect, useRef } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 
-const Cards = ({id,path,collection , item}) => {
+const Cards = ({id,path,collection}) => {
 
    const dispatch = useDispatch()
 
@@ -32,7 +32,7 @@ const Cards = ({id,path,collection , item}) => {
     }, [modal])
     
     
-    const hanclesClick = e => e.stopPropagation();
+    const handlesClick = e => e.stopPropagation();
     
 
   return (
@@ -57,7 +57,7 @@ const Cards = ({id,path,collection , item}) => {
      open={modal}
      closeModal={closeModal}
      >
-      <div onClick={hanclesClick}>
+      <div onClick={handlesClick}>
       <img className='cards_container_modal_img' src={path} />
       <button className='modal_container_btn'
       onClick={closeModal} >
