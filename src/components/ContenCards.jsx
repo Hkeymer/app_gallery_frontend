@@ -25,7 +25,10 @@ const ContenCards = ({typeFetch,text_description,textSearch}) => {
 
         getApi(typeFetch)
         .then(data=>{
-          if(data.length>0)setData(data)
+          if(data.length>0){
+            setData(data) 
+            setNoData(false)
+          }
           else{
             setNoData(true)
           }
@@ -35,7 +38,10 @@ const ContenCards = ({typeFetch,text_description,textSearch}) => {
 
         getApi()
         .then(data=>{
-           if(data.length>0)setData(data)
+           if(data.length>0){
+            setData(data) 
+            setNoData(false)
+          }
            else{
              setNoData(true)
            }
@@ -57,7 +63,7 @@ const ContenCards = ({typeFetch,text_description,textSearch}) => {
   return (
     <div>
       {!noData?<div>
-      <Categories text={data.length>0&&text_description}/>
+      <Categories text={text_description}/>
       <div className='contencards_container' >{
          data.map(item=>
          <Suspense  key={item.id} 
